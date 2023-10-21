@@ -32,6 +32,13 @@ class Product{
         return product;
     }
 
+    static async deleteOneProduct(id){
+
+        const productDelete = await conn.db().collection("products").deleteOne({_id: new ObjectId(id)})
+
+        return productDelete;
+    }
+
 
 }
 

@@ -38,6 +38,17 @@ class ProductController{
 
     }
 
+    static async DeleteProduct(req,res){
+        const {id}  = req.params
+
+        const product = await Product.deleteOneProduct(id)
+
+        return res.status(200).json({
+            message:`Produto ${id} deletado do mongodb`,
+        })
+
+    }
+
 }
 
 module.exports = ProductController;

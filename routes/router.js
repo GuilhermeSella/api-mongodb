@@ -8,6 +8,7 @@ router.get("/", ProductController.ShowProducts)
 router.get("/:id", ProductController.ShowOneProduct)
 router.post("/", ProductController.CreateProducts)
 router.delete("/:id", ProductController.DeleteProduct)
+router.put("/:id", ProductController.EditProductMethod)
 
 
 module.exports = router;

@@ -39,6 +39,11 @@ class Product{
         return productDelete;
     }
 
+    async editProduct(id){
+        const editProduct = await conn.db().collection("products").updateOne({_id : new ObjectId(id)}, {$set: this })
+        return 
+    }
+
 
 }
 

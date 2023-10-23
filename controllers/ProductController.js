@@ -49,6 +49,20 @@ class ProductController{
 
     }
 
+    static async EditProductMethod(req,res){
+        const {id} = req.params
+        const {name, price, description} = req.body
+
+        const product = new Product(name,price,description);
+
+        await product.editProduct(id)
+
+        return res.status(200).json({
+            message:"Dados do produto editado!",
+            product
+        })
+    }
+
 }
 
 module.exports = ProductController;
